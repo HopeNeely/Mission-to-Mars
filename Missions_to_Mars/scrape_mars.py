@@ -3,6 +3,7 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 import pandas as pd
 import requests
+import time
 from webdriver_manager.chrome import ChromeDriverManager
 
 def init_browser():
@@ -19,6 +20,8 @@ def scrape():
     # scrape the site using the URL
     url = 'https://mars.nasa.gov/news/'
     browser.visit(url)
+
+    time.sleep(1)
     
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
@@ -99,7 +102,7 @@ def scrape():
 
     browser.quit()
 
-    return scraped_data
+    return mars_data
 
 
 
