@@ -59,12 +59,12 @@ def scrape():
 
     df = tables[0]
 
-    html_table = df.to_html()
+    htmltable = df.to_html(header=False, index=False, classes="table table-bordered")
 
-    html_table.replace('\n', '')
+    htmltable = htmltable.replace('\n', '')
 
-    #df.to_html('table.html')     Don't think I need the table.html. Just the html table string, named html_table.
-
+    html_table = htmltable.split()
+        
 
     # ### Mars Hemispheres
     # The USGS Astrogeology site [here](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) was visited to obtain high resolution images for each of Mars' hemispheres. Python dictionary was created to store the data using the keys `img_url` and `title`. The dictionary was appended with the image url string and the hemisphere title to a list. This list contains one dictionary for each hemisphere.
