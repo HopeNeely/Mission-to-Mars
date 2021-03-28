@@ -9,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 def init_browser():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
-
+    return browser
 
 # ### NASA Mars News
 # This section scrapes the [NASA Mars News Site](https://mars.nasa.gov/news/) to collect the latest News Title and Paragraph Text. 
@@ -45,7 +45,8 @@ def scrape():
 
     a = soup.body.div.find('a', class_="showimg fancybox-thumbs")
     link = a['href']
-    featured_image = print('https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/'+link)
+    base_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/'
+    featured_image = base_url+link
 
 
     # ### Mars Facts
