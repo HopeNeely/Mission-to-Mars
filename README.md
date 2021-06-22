@@ -1,10 +1,31 @@
-## Mission to Mars
-This challenge entails scraping data from three different websites and creating a flask app to display this data in an html file. 
-1. I created a Jupyter notebook to complete all web scraping and analysis tasks. I marked down details on each step in the `mission_to_mars.ipynb` included in this repository. Where Splinter was used to navigate the sites when needed and BeautifulSoup was used to help find and parse out the necessary data. 
-2. I used MongoDB with Flask templating to create a new HTML page that displays all the information that was scraped from the various urls. I converted the Jupyter notebook into a Python script call `scrape_mars.py` with a function called `scrape` that will excute all the scraping code and return one Python dictioary containing all of the scraped data. 
-3. I created a route called `/scrape` that will import `scrape_mars.py` script and call the `scrape` function.
-4. Stored the return value in Mongo as a Python dictionary. 
-5. I created a root route `/` that will query the Mongo database and pass the scraped data into and HTML template to display the data. 
-6. Finally, I took screenshots of my final application: 
-![image](https://user-images.githubusercontent.com/74943070/112769967-21642180-8ff2-11eb-92a0-8e1f5e7c4a21.png)
-![image](https://user-images.githubusercontent.com/74943070/112770041-9899b580-8ff2-11eb-815d-398b1ded0494.png)
+# Mission to Mars
+This challenge entails scraping data about Mars from three different websites, adding that data to a database and creating a flask app to display this data in an html file. 
+
+## Tools:
+Jupyter Notebook<br>
+Python<br>
+MongoDB<br>
+Flask<br>
+HTML<br>
+
+# Process 
+
+1. Jupyter notebook was used to complete all web scraping and analysis tasks. See details in markdown on each step in the [mission_to_mars.ipynb](mission_to_mars.ipynb) included in this repository. Splinter was used to navigate the sites when needed and BeautifulSoup was used to help find and parse out the necessary data. 
+2. MongoDB with Flask templating were used to create a new HTML page that displays all the information that was scraped from the various URLs. 
+3. The Jupyter Notebook was converted into a Python script call [scrape_mars.py](scrape_mars.py) with a function called "scrape" that will execute the scraping code and return one Python dictionary containing all of the scraped data. 
+3. I created a route called "/scrape" that will import [scrape_mars.py](scrape_mars.py) script and call the "scrape" function.
+4. The return value was saved in a Mongo database. 
+5. I created a root route "/" that will query the Mongo database and pass the scraped data into and HTML template to be displayed. 
+6. The final HTML looks like this:
+![image](images/mars_app_screenshot1.png)
+![image](images/mars_app_screenshot2.png)
+
+## Check it out yourself
+1. Clone this repository to your computer. 
+2. Use Visual Studio Code to open the repository on your computer.
+3. Open [app.py](app.py) and run. Hold ctrl + click link in terminal to open the page. Click "Scrape New Data" button in web browser to collect most resent data on Mars. 
+
+# Contact Information: 
+### Hope Neely
+Email: [hope.neely@gmail.com](hope.neely@gmail.com)<br>
+LinkedIn: [https://www.linkedin.com/in/hopeneely/](https://www.linkedin.com/in/hopeneely/)
